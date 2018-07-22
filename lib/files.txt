@@ -1,0 +1,12 @@
+ Volume in drive E is NEW VOLUME
+ Volume Serial Number is DC67-5BB4
+
+ Directory of E:\wxmozilla\mozfiles\dist\lib
+
+[.]                      [..]                     editorbase_s.lib
+embed_base_s.lib         gkgfx.lib                mfcEmbedComponents.lib
+nspr4.lib                nspr4_s.lib              plc4.lib
+plc4_s.lib               plds4.lib                plds4_s.lib
+xpcom.lib                xpcomglue_s.lib          files.txt
+              13 File(s)      6,747,876 bytes
+               2 Dir(s)   7,388,643,328 bytes free

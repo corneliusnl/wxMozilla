@@ -1,0 +1,22 @@
+Windows build instructions:
+
+To build wxMozilla, you will need to have MSVC 6 (or above) with the latest service pack. It is recommended also that you install the latest Platform SDK files. These instructions are based upon a build on MSVC 6 and may not work with other versions. 
+
+1. Download the latest version of wxMozilla and the Mozilla libraries for wxMozilla from http://www.theolliviers.com/wxMozilla/. Unpack the Mozilla libraries into <wxMozilla root>\mozfiles. Also, make sure you have downloaded and built wxWindows. The makefiles assume a hybrid build. (It was tested with 2.4.0)
+
+2. Set WXWIN to your wxWindows root directory, and run vcvars32.bat in your <MSVC root>\VC98\bin directory. This will setup the MSVC environment variables. 
+
+3. To build the library, from the command line, run the following commands:
+
+cd <wxMozilla root>\src
+nmake -f wxMozilla.mak 
+
+This will place a wxMozillah.lib file in your <WXWIN>\lib directory. 
+
+4. To build the demo application, run the following commands:
+
+cd <wxMozilla root>\demo
+nmake -f wxMozilla.mak
+
+Once the demo has finished building, you will need to copy all the files in the <wxMozilla root>\mozfiles\Embed folder (including subfolders) into the <wxMozilla root>\demo directory. You will also need to copy wxmsw<version>h.dll file into this folder. double-click on wxMozillaDemo.exe to begin! 
+ 

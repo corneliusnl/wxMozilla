@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: wxmozilla - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\DFANCE~1\LOCALS~1\Temp\RSP25.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /ZI /Od /I "include" /I "mozfiles" /I "mozfiles/dist/include" /I "mozfiles/dist/include/xpcom/" /I "mozfiles/dist/include/webbrwsr" /I "mozfiles/dist/include/uriloader" /I "mozfiles/dist/include/docshell" /I "mozfiles/dist/include/nspr" /I "mozfiles/dist/include/string" /I "mozfiles/dist/include/pref" /I "mozfiles/dist/include/widget" /I "mozfiles/dist/include/embed_base" /I "mozfiles/dist/include/webbrowserpersist" /I "mozfiles/dist/include/windowwatcher" /I "mozfiles/dist/include/commandhandler" /I "mozfiles/dist/include/composer" /I "mozfiles/dist/include/dom" /I "mozfiles/dist/include/gfx" /I "mozfiles/dist/include/content" /I "mozfiles/dist/include/necko" /I "mozfiles/dist/include/webshell" /I "mozfiles/dist/include/find" /I "c:\wxWindows_2.4.0/lib/mswd" /I "c:\wxWindows_2.4.0/include" /I "c:\wxWindows_2.4.0/contrib/include" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D WINVER=0x400 /D "_MT" /D wxUSE_GUI=1 /D "__WXDEBUG__" /D WXDEBUG=1 /D "XP_WIN" /D "XP_WIN32" /Fp"Debug/wxmozilla.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\wxmozilla\src\wxMozillaBrowserChrome.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\DFANCE~1\LOCALS~1\Temp\RSP25.tmp" 
+Creating command line "link.exe -lib /nologo /out:"Debug\wxmozilla.lib"  .\Debug\wxMozillaBrowser.obj .\Debug\wxMozillaBrowserChrome.obj .\Debug\wxMozillaChrome.obj .\Debug\wxMozillaEvents.obj .\Debug\wxMozillaWindow.obj "
+<h3>Output Window</h3>
+Compiling...
+wxMozillaBrowserChrome.cpp
+Creating library...
+
+
+
+<h3>Results</h3>
+wxmozilla.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

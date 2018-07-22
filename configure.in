@@ -1,0 +1,56 @@
+# Process this file with autoconf to produce a configure script
+
+AC_INIT(src/mozillawin.cpp)
+
+AC_PREREQ(2.13)
+
+AM_INIT_AUTOMAKE("wxMozBrowser", 0.2.0)
+AM_MAINTAINER_MODE
+#AM_CONFIG_HEADER(config.h)
+
+# Check for GLIB + GTK (do before c++ checks)
+AM_PATH_GLIB(1.2.2,
+	[
+		LIBS="$LIBS $GLIB_LIBS"
+		CFLAGS="$CFLAGS $GLIB_CFLAGS"
+	],
+	AC_MSG_ERROR("Need GLIB 1.2.0 or better!"))
+
+AM_PATH_GTK(1.2.2,
+	[
+		LIBS="$LIBS $GTK_LIBS"
+		CFLAGS="$CFLAGS $GTK_CFLAGS"
+		AC_DEFINE_UNQUOTED(CONFIG_GTK_MAJOR, $gtk_config_major_version)
+		AC_DEFINE_UNQUOTED(CONFIG_GTK_MINOR, $gtk_config_minor_version)
+	],
+	AC_MSG_ERROR("Need GTK+ 1.2.0 or better!"))
+
+AC_PROG_CC
+AC_PROG_CXX
+AC_PROG_CXXCPP
+AC_LANG_CPLUSPLUS
+AC_PROG_INSTALL
+AM_PROG_LIBTOOL 
+
+# Check for wx-windows
+if test "x$WX_CONFIG" = "x"
+then
+	AC_PATH_PROG(WX_CONFIG, wx-config)
+fi
+
+if test "x$WX_CONFIG" != "x"
+then
+	WX_CFLAGS=`$WX_CONFIG --cflags`
+	WX_LDFLAGS=`$WX_CONFIG --libs`
+else
+	AC_MSG_ERROR("Cannot find wx-config program.")
+fi
+CPPFLAGS="$CPPFLAGS $WX_CFLAGS $LIBXML_CFLAGS $GTK_CFLAGS"
+LIBS="$LIBS $WX_LIBS $LIBXML_LIBS"
+AC_CHECK_HEADERS(wx/wx.h,,AC_MSG_ERROR("Cannot find wx/wx.h header file."))
+AC_CHECK_LIB(wx_gtk-2.4, main,,AC_MSG_ERROR("wx_gtk-2.3 library is required."), $GTK_LDFLAGS)
+
+AC_OUTPUT([Makefile
+	src/Makefile
+	demo/Makefile
+	include/Makefile]) 
